@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="generator" content="Primo" />
+    <title>Portfolio Theme</title><!-- HEAD_svelte-xwprd8_START -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://rsqparnnstuqrfjbcvjl.supabase.co/storage/v1/object/public/images/5bdf6c84-014d-4917-9943-aae418d70dd8/1690072341646favicon.ico">
+    <link href="https://api.fontshare.com/v2/css?f[]=bespoke-serif@400,700,401,300,500,501,701,301&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio">
+    <style>
+        /* Reset & standardize default styles */
+        @import url("https://unpkg.com/@primo-app/primo@1.3.64/reset.css") layer;
+
+        /* Design tokens (apply to components) */
+        :root {
+            /* Custom theme options */
+            --color-accent: #5a5a5a;
+            --font-primary: "Bespoke Serif", serif;
+            --font-secondary: "Open Sans", sans-serif;
+
+            /* Base values */
+            --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+            --border-radius: 8px;
+            --border-color: #cbcace;
+        }
+
+        /* Root element (use instead of `body`) */
+        #page {
+            font-family: var(--font-secondary), system-ui, sans-serif;
+            color: #222;
+            line-height: 1.5;
+            font-size: 1.125rem;
+            background: white;
+        }
+
+        /* Elements */
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        a.link {
+            line-height: 1.25;
+            font-weight: 400;
+            border-bottom: 2px solid var(--color-accent, rebeccapurple);
+            transform: translateY(-2px);
+            /* move link back into place */
+            transition: var(--transition, 0.1s border);
+        }
+
+        a.link:hover {
+            border-color: transparent;
+        }
+
+        .heading {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            line-height: 1.15;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+        }
+
+        .button {
+            color: white;
+            background: var(--color-accent, rebeccapurple);
+            border-radius: 5px;
+            padding: 8px 20px;
+            transition: var(--transition, 0.1s box-shadow);
+            border: 0;
+        }
+
+        /* reset */
+
+        .button:hover {
+            box-shadow: 0 0 0 2px var(--color-accent, rebeccapurple);
+        }
+
+        .button.inverted {
+            background: transparent;
+            color: var(--color-accent, rebeccapurple);
+        }
+
+        /* Content Section */
+        .section .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section .content p {
+            padding: 0.25rem 0;
+        }
+
+        .section .content img {
+            width: 100%;
+            margin: 2rem 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .section .content a.link {}
+
+        .section .content h1 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section .content h2 {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section .content h3 {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .section .content ul {
+            list-style: disc;
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .section .content ol {
+            list-style: decimal;
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+
+        .section .content blockquote {
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+        }
+
+        section.has-content {
+            background: var(--background);
+        }
+    </style><!-- HEAD_svelte-xwprd8_END -->
+    <style>
+        .section-container.svelte-1byd7us.svelte-1byd7us {
+            padding-top: 6rem;
+            padding-bottom: 5rem;
+            display: grid;
+            gap: 2rem
+        }
+
+        .section-container.svelte-1byd7us>div.svelte-1byd7us {
+            display: grid;
+            gap: 1.25rem
+        }
+
+        @media(min-width: 900px) {
+            .section-container.svelte-1byd7us.svelte-1byd7us {
+                gap: 6rem;
+                grid-template-columns: auto auto
+            }
+
+            .section-container.svelte-1byd7us>figure.svelte-1byd7us {
+                grid-column: 2
+            }
+
+            .section-container.svelte-1byd7us>div.svelte-1byd7us {
+                place-content: center;
+                grid-row: 1
+            }
+        }
+
+        .headline.svelte-1byd7us.svelte-1byd7us {
+            font-size: 3rem;
+            font-weight: 500;
+            font-family: var(--font-primary)
+        }
+
+        .description.svelte-1byd7us a {
+            transition: 0.1s border-color;
+            border-bottom: 2px solid var(--color-accent)
+        }
+
+        .description.svelte-1byd7us a:hover {
+            border-color: transparent
+        }
+
+        ul.svelte-1byd7us.svelte-1byd7us {
+            display: flex;
+            align-items: center;
+            margin-top: 0.75rem
+        }
+
+        ul.svelte-1byd7us li.svelte-1byd7us:not(:last-child) {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem
+        }
+
+        ul.svelte-1byd7us li.svelte-1byd7us:not(:last-child):after {
+            content: "";
+            height: 20px;
+            border-right: 2px solid var(--color-accent);
+            padding-right: 1rem
+        }
+
+        ul.svelte-1byd7us a.svelte-1byd7us {
+            display: flex;
+            align-items: center
+        }
+
+        ul.svelte-1byd7us a span.svelte-1byd7us {
+            margin-left: 0.5rem
+        }
+
+        figure.svelte-1byd7us.svelte-1byd7us {
+            position: relative;
+            margin-left: 18px
+        }
+
+        figure.square.svelte-1byd7us.svelte-1byd7us {
+            margin-left: 0
+        }
+
+        figure.square.svelte-1byd7us img.svelte-1byd7us {
+            border-radius: var(--border-radius, 2rem)
+        }
+
+        figure.svelte-1byd7us img.svelte-1byd7us {
+            height: 226px;
+            width: 226px;
+            border-radius: 50%;
+            z-index: 1;
+            position: relative;
+            -o-object-fit: cover;
+            object-fit: cover
+        }
+
+        .heading.svelte-hf1yy6.svelte-hf1yy6 {
+            margin-bottom: 1.75rem
+        }
+
+        ul.items.svelte-hf1yy6.svelte-hf1yy6 {
+            display: grid;
+            gap: 4rem
+        }
+
+        li.svelte-hf1yy6.svelte-hf1yy6 {
+            display: grid;
+            gap: 3rem
+        }
+
+        li.svelte-hf1yy6.svelte-hf1yy6:not(:last-child) {
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color)
+        }
+
+        li.svelte-hf1yy6 .post-info .date.svelte-hf1yy6 {
+            font-size: 1rem;
+            font-weight: 400
+        }
+
+        li.svelte-hf1yy6 .post-info .title.svelte-hf1yy6 {
+            font-size: 1.5rem;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            margin-bottom: 1rem
+        }
+
+        li.svelte-hf1yy6 .post-info .description.svelte-hf1yy6 {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem
+        }
+
+        li.svelte-hf1yy6 .post-info .links.svelte-hf1yy6 {
+            display: flex;
+            gap: 1rem
+        }
+
+        li.svelte-hf1yy6 img.svelte-hf1yy6 {
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius)
+        }
+
+        @media(min-width: 600px) {
+            li.svelte-hf1yy6.svelte-hf1yy6 {
+                grid-template-columns: 3fr 1fr;
+                gap: 4rem
+            }
+        }
+
+        .section-container.svelte-sqs4td.svelte-sqs4td {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem
+        }
+
+        .heading.svelte-sqs4td.svelte-sqs4td {
+            text-align: center
+        }
+
+        ul.svelte-sqs4td.svelte-sqs4td {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1.75rem
+        }
+
+        ul.svelte-sqs4td li.svelte-sqs4td {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid var(--border-color, #eee);
+            border-radius: var(--border-radius);
+            padding: 1.5rem
+        }
+
+        ul.svelte-sqs4td li .title.svelte-sqs4td {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            align-items: center
+        }
+
+        ul.svelte-sqs4td li .title .label.svelte-sqs4td {
+            line-height: 1.1;
+            font-weight: 600
+        }
+
+        .section-container.svelte-1oe3rov.svelte-1oe3rov.svelte-1oe3rov {
+            display: grid;
+            place-items: center
+        }
+
+        .heading.svelte-1oe3rov.svelte-1oe3rov.svelte-1oe3rov {
+            text-align: center;
+            margin-bottom: 1.5rem
+        }
+
+        .accordion.svelte-1oe3rov.svelte-1oe3rov.svelte-1oe3rov {
+            width: 100%;
+            max-width: 900px
+        }
+
+        .accordion.svelte-1oe3rov .item.svelte-1oe3rov.svelte-1oe3rov {
+            padding: 1.5rem 0
+        }
+
+        .accordion.svelte-1oe3rov .item.svelte-1oe3rov.svelte-1oe3rov:not(:last-child) {
+            border-bottom: 1px solid var(--border-color, #eee)
+        }
+
+        .accordion.svelte-1oe3rov .item.active button .icon.svelte-1oe3rov.svelte-1oe3rov {
+            transform: scaleY(-1)
+        }
+
+        .accordion.svelte-1oe3rov .item button.svelte-1oe3rov.svelte-1oe3rov {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%
+        }
+
+        .accordion.svelte-1oe3rov .item button span.svelte-1oe3rov.svelte-1oe3rov {
+            font-size: 1.25rem;
+            font-weight: 600
+        }
+
+        .accordion.svelte-1oe3rov .item button .icon.svelte-1oe3rov.svelte-1oe3rov {
+            font-size: 1.25rem;
+            color: var(--color-accent, rebeccapurple);
+            transition: transform 0.2s
+        }
+
+        .accordion.svelte-1oe3rov .item button.svelte-1oe3rov+.description.svelte-1oe3rov {
+            padding-top: 0.5rem
+        }
+
+        .accordion.svelte-1oe3rov .item .description.svelte-1oe3rov.svelte-1oe3rov {
+            padding-right: 2rem
+        }
+
+        .section-container.svelte-ghakxq.svelte-ghakxq {
+            padding-top: 7rem
+        }
+
+        .heading.svelte-ghakxq.svelte-ghakxq {
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        .items.svelte-ghakxq.svelte-ghakxq {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 5rem 3rem
+        }
+
+        .item.svelte-ghakxq.svelte-ghakxq {
+            display: grid;
+            place-content: start;
+            gap: 1rem
+        }
+
+        .item.svelte-ghakxq .title.svelte-ghakxq {
+            font-size: 1.5rem;
+            font-weight: 600
+        }
+
+        .left.svelte-ghakxq .heading.svelte-ghakxq {
+            text-align: left
+        }
+
+        .heading.svelte-hf1yy6.svelte-hf1yy6 {
+            margin-bottom: 1.75rem
+        }
+
+        ul.items.svelte-hf1yy6.svelte-hf1yy6 {
+            display: grid;
+            gap: 4rem
+        }
+
+        li.svelte-hf1yy6.svelte-hf1yy6 {
+            display: grid;
+            gap: 3rem
+        }
+
+        li.svelte-hf1yy6.svelte-hf1yy6:not(:last-child) {
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color)
+        }
+
+        li.svelte-hf1yy6 .post-info .date.svelte-hf1yy6 {
+            font-size: 1rem;
+            font-weight: 400
+        }
+
+        li.svelte-hf1yy6 .post-info .title.svelte-hf1yy6 {
+            font-size: 1.5rem;
+            font-family: var(--font-primary);
+            font-weight: 500;
+            margin-bottom: 1rem
+        }
+
+        li.svelte-hf1yy6 .post-info .description.svelte-hf1yy6 {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem
+        }
+
+        li.svelte-hf1yy6 .post-info .links.svelte-hf1yy6 {
+            display: flex;
+            gap: 1rem
+        }
+
+        li.svelte-hf1yy6 img.svelte-hf1yy6 {
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius)
+        }
+
+        @media(min-width: 600px) {
+            li.svelte-hf1yy6.svelte-hf1yy6 {
+                grid-template-columns: 3fr 1fr;
+                gap: 4rem
+            }
+        }
+
+        .description.svelte-1n9fm19.svelte-1n9fm19 {
+            margin-bottom: 1.5rem
+        }
+
+        ul.svelte-1n9fm19.svelte-1n9fm19 {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1rem
+        }
+
+        ul.svelte-1n9fm19 li.svelte-1n9fm19 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600
+        }
+
+        ul.svelte-1n9fm19 li.svelte-1n9fm19:not(:last-child):after {
+            content: '';
+            border-right: 2px solid var(--color-accent);
+            display: inline-block;
+            height: 20px;
+            padding-left: 1rem;
+            margin-right: 1.5rem
+        }
+
+        .description.svelte-1n9fm19.svelte-1n9fm19 {
+            margin-bottom: 1.5rem
+        }
+
+        ul.svelte-1n9fm19.svelte-1n9fm19 {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1rem
+        }
+
+        ul.svelte-1n9fm19 li.svelte-1n9fm19 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600
+        }
+
+        ul.svelte-1n9fm19 li.svelte-1n9fm19:not(:last-child):after {
+            content: '';
+            border-right: 2px solid var(--color-accent);
+            display: inline-block;
+            height: 20px;
+            padding-left: 1rem;
+            margin-right: 1.5rem
+        }
+
+        .section-container.svelte-i8f0ga.svelte-i8f0ga {
+            padding-bottom: 1rem
+        }
+
+        .primary.svelte-i8f0ga.svelte-i8f0ga {
+            color: var(--color-text-secondary);
+            padding-bottom: 4rem
+        }
+
+        .primary.svelte-i8f0ga a.email.svelte-i8f0ga {
+            display: flex;
+            align-items: center
+        }
+
+        .primary.svelte-i8f0ga a.email span.svelte-i8f0ga {
+            margin-left: 0.75rem
+        }
+
+        .primary.svelte-i8f0ga a.email.svelte-i8f0ga svg {
+            transition: 0.2s transform
+        }
+
+        .primary.svelte-i8f0ga a.email.svelte-i8f0ga:hover svg {
+            transform: translateX(5px)
+        }
+
+        .secondary.svelte-i8f0ga.svelte-i8f0ga {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .copyright.svelte-i8f0ga.svelte-i8f0ga {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary, #2D3339)
+        }
+
+        .primo.svelte-i8f0ga.svelte-i8f0ga {
+            font-weight: 600;
+            font-size: 0.75rem
+        }
+
+        .primo.svelte-i8f0ga a.svelte-i8f0ga {
+            text-decoration: underline
+        }
+
+        ul.svelte-i8f0ga.svelte-i8f0ga {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+            list-style: none
+        }
+
+        ul.svelte-i8f0ga a.svelte-i8f0ga {
+            transition: var(--transition)
+        }
+
+        ul.svelte-i8f0ga a.svelte-i8f0ga:hover {
+            color: var(--color-accent)
+        }
+
+        @media(min-width: 600px) {
+            .secondary.svelte-i8f0ga.svelte-i8f0ga {
+                flex-direction: row
+            }
+
+            ul.svelte-i8f0ga.svelte-i8f0ga {
+                font-size: 1.25rem
+            }
+        }
+    </style>
+</head>
+
+<body id="page">
+
+    <div class="section" id="section-ba1dcbef">
+        <header>
+            <div class="section-container svelte-1byd7us">
+                <figure class="svelte-1byd7us"><img src="https://rsqparnnstuqrfjbcvjl.supabase.co/storage/v1/object/public/images/5bdf6c84-014d-4917-9943-aae418d70dd8/profile-pic_round_stripes.png1690072341863" alt="Profile photo" class="svelte-1byd7us"></figure>
+                <div class="svelte-1byd7us">
+                    <h1 class="headline svelte-1byd7us">Denver Noell</h1>
+                    <div class="description svelte-1byd7us"><!-- HTML_TAG_START -->
+                        <p>Civil Engineering EIT that loves building cool things with Python.</p><!-- HTML_TAG_END -->
+                    </div>
+                    <ul class="social svelte-1byd7us">
+                        <li class="svelte-1byd7us"><a href="https://twitter.com/DenverNoell" class="svelte-1byd7us">
+                                <span class="svelte-1byd7us">Twitter</span></a>
+                        </li>
+                        <li class="svelte-1byd7us"><a href="https://github.com/Denvernoell" class="svelte-1byd7us"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                    <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /><!-- HTML_TAG_END -->
+                                </svg>
+                                <span class="svelte-1byd7us">Github</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="section" id="section-a73cc97e">
+        <div class="section">
+            <div class="section-container content"><!-- HTML_TAG_START -->
+                <h2>Welcome to my portfolio</h2>
+                <p>This is some copy to help you get to know about my interests, experience, and top projects. I may share a few personal things here too.</p><!-- HTML_TAG_END -->
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section-14aec616">
+        <section>
+            <div class="section-container">
+                <h2 class="heading svelte-hf1yy6">Experience</h2>
+                <ul class="items svelte-hf1yy6">
+                    <li class="svelte-hf1yy6">
+                        <div class="post-info"><span class="date svelte-hf1yy6">April 2022 - Current</span>
+                            <h3 class="title svelte-hf1yy6">Assistant Engineer - Provost &amp; Pritchard</h3>
+                            <div class="description svelte-hf1yy6"><!-- HTML_TAG_START -->
+                                <ul>
+                                    <li>Conversion of Excel processes to Python while introducing version control with Git</li>
+                                    <li>Streamlit Apps
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                            <defs>
+                                                <linearGradient id="vscodeIconsFileTypeExcel0" x1="4.494" x2="13.832" y1="-2092.086" y2="-2075.914" gradientTransform="translate(0 2100)" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" stop-color="#18884f" />
+                                                    <stop offset=".5" stop-color="#117e43" />
+                                                    <stop offset="1" stop-color="#0b6631" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="#185c37" d="M19.581 15.35L8.512 13.4v14.409A1.192 1.192 0 0 0 9.705 29h19.1A1.192 1.192 0 0 0 30 27.809V22.5Z" />
+                                            <path fill="#21a366" d="M19.581 3H9.705a1.192 1.192 0 0 0-1.193 1.191V9.5L19.581 16l5.861 1.95L30 16V9.5Z" />
+                                            <path fill="#107c41" d="M8.512 9.5h11.069V16H8.512Z" />
+                                            <path d="M16.434 8.2H8.512v16.25h7.922a1.2 1.2 0 0 0 1.194-1.191V9.391A1.2 1.2 0 0 0 16.434 8.2Z" opacity=".1" />
+                                            <path d="M15.783 8.85H8.512V25.1h7.271a1.2 1.2 0 0 0 1.194-1.191V10.041a1.2 1.2 0 0 0-1.194-1.191Z" opacity=".2" />
+                                            <path d="M15.783 8.85H8.512V23.8h7.271a1.2 1.2 0 0 0 1.194-1.191V10.041a1.2 1.2 0 0 0-1.194-1.191Z" opacity=".2" />
+                                            <path d="M15.132 8.85h-6.62V23.8h6.62a1.2 1.2 0 0 0 1.194-1.191V10.041a1.2 1.2 0 0 0-1.194-1.191Z" opacity=".2" />¨C10C¨C11C¨C12C¨C13C
+                                        </svg>
+                                    </li>
+                                </ul><!-- HTML_TAG_END -->
+                            </div>
+                            <div class="links svelte-hf1yy6"><a class="link" href="">Check out app</a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1590602846989-e99596d2a6ee?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" alt="" class="svelte-hf1yy6">
+                    </li>
+                    <li class="svelte-hf1yy6">
+                        <div class="post-info"><span class="date svelte-hf1yy6">December 2019 - April 2022</span>
+                            <h3 class="title svelte-hf1yy6">Akel Engineering Group - Intern</h3>
+                            <div class="description svelte-hf1yy6"><!-- HTML_TAG_START -->
+                                <p>Developed python applications to streamline water model calibration process
+                                    Created Jupyter Notebooks to summarize system statistics for all InfoWater and InfoSewer Models
+                                    Automated monthly data import and analysis for multiple neighborhood’s water usage using VBA
+                                    Assisted in the design of water, sewer, and storm infrastructure improvements to meet design criteria using various hydraulic modeling software programs
+                                    Created detailed reports using Microsoft Word and Microsoft Excel with an emphasis on formatting and visual appeal
+                                    Developed water, sewer, and storm master plans for over 10 California cities.</p><!-- HTML_TAG_END -->
+                            </div>
+                            <div class="links svelte-hf1yy6"><a class="link" href="/">Download</a><a class="link" href="/">Read more</a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1721&amp;q=80" alt="" class="svelte-hf1yy6">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="section" id="section-a5a04a85">
+        <section class="section-container svelte-sqs4td">
+            <h2 class="heading svelte-sqs4td">Featured List</h2>
+            <ul class="svelte-sqs4td">
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span></span>
+                        <span class="label svelte-sqs4td">Real-time Updates</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>Stay ahead of the game with real-time updates on flight delays.</p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span></span>
+                        <span class="label svelte-sqs4td">In-app Booking</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>Book your flights, hotels, and experiences directly through our app. </p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+                <li class="svelte-sqs4td">
+                    <h3 class="title svelte-sqs4td"><span></span>
+                        <span class="label svelte-sqs4td">24/7 Customer Support</span>
+                    </h3>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>We're here for you, no matter where in the world you are. </p><!-- HTML_TAG_END -->
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="section" id="section-295d1e43">
+        <section class="section-container svelte-1oe3rov">
+            <h2 class="heading svelte-1oe3rov">Frequently Asked Questions</h2>
+            <div class="accordion svelte-1oe3rov">
+                <div class="item svelte-1oe3rov active"><button class="svelte-1oe3rov"><span class="svelte-1oe3rov">What if I don't want to continue?</span>
+                        <span class="icon svelte-1oe3rov"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
+                            </svg>
+                        </span></button>
+                    <div class="description svelte-1oe3rov"><!-- HTML_TAG_START -->
+                        <p>You can cancel at anytime.</p><!-- HTML_TAG_END -->
+                    </div>
+                    <noscript>
+                        <div class="description svelte-1oe3rov"><!-- HTML_TAG_START -->
+                            <p>You can cancel at anytime.</p><!-- HTML_TAG_END -->
+                        </div>
+                    </noscript>
+                </div>
+                <div class="item svelte-1oe3rov"><button class="svelte-1oe3rov"><span class="svelte-1oe3rov">How much will this cost?</span>
+                        <span class="icon svelte-1oe3rov"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 256 256" class="iconify iconify--ph"><!-- HTML_TAG_START -->
+                                <path fill="currentColor" d="m216.49 104.49l-80 80a12 12 0 0 1-17 0l-80-80a12 12 0 0 1 17-17L128 159l71.51-71.52a12 12 0 0 1 17 17Z" /><!-- HTML_TAG_END -->
+                            </svg>
+                        </span></button>
+
+                    <noscript>
+                        <div class="description svelte-1oe3rov"><!-- HTML_TAG_START -->
+                            <p>Generally our services range from $100-500 depending on your needs.</p><!-- HTML_TAG_END -->
+                        </div>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="section" id="section-b1cb57fc">
+        <section class="section-container  svelte-ghakxq">
+            <h2 class="heading svelte-ghakxq">Our Services</h2>
+            <div class="items svelte-ghakxq">
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">Design</h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece.</p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">Development</h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. </p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">UX &amp; UI Architecture</h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">SEO Optimization</h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>ll the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">Content Strategy</h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+                <div class="item svelte-ghakxq">
+                    <h2 class="title svelte-ghakxq">Testing &amp; Maitenance </h2>
+                    <div class="description"><!-- HTML_TAG_START -->
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p><!-- HTML_TAG_END -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="section" id="section-11c638f6">
+        <section>
+            <div class="section-container">
+                <h2 class="heading svelte-hf1yy6">Featured Projects</h2>
+                <ul class="items svelte-hf1yy6">
+                    <li class="svelte-hf1yy6">
+                        <div class="post-info"><span class="date svelte-hf1yy6">01.01.22</span>
+                            <h3 class="title svelte-hf1yy6">First project</h3>
+                            <div class="description svelte-hf1yy6"><!-- HTML_TAG_START -->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra senectus ipsum a non. Malesuada magna etiam great dignissim curabitur aliquam.</p><!-- HTML_TAG_END -->
+                            </div>
+                            <div class="links svelte-hf1yy6"><a class="link" href="/">Visit Site</a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1653972677660-71217674c326?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Mountain" class="svelte-hf1yy6">
+                    </li>
+                    <li class="svelte-hf1yy6">
+                        <div class="post-info"><span class="date svelte-hf1yy6">01.01.22</span>
+                            <h3 class="title svelte-hf1yy6">Second project</h3>
+                            <div class="description svelte-hf1yy6"><!-- HTML_TAG_START -->
+                                <p>Magna reprehenderit occaecat proident. Magna est quis sunt nisi ullamco amet commodo.</p><!-- HTML_TAG_END -->
+                            </div>
+                            <div class="links svelte-hf1yy6"><a class="link" href="/second-project">Visit Site</a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1649087921869-4ea8cf7364bd?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Mountains by the sea" class="svelte-hf1yy6">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="section" id="section-310d737c">
+        <section class="section-container">
+            <h2 class="heading">Skills</h2>
+            <div class="description svelte-1n9fm19"><!-- HTML_TAG_START -->
+                <p>Some technologies i’ve been using lately:</p><!-- HTML_TAG_END -->
+            </div>
+            <ul class="svelte-1n9fm19">
+                <li class="svelte-1n9fm19">
+                    <span>Python</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Supabase</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Streamlit</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Matplotlib</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Pandas</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Polars</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Leaflet</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>VS Code</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Poetry</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Shiny</span>
+                </li>
+                <li class="svelte-1n9fm19">
+                    <span>Plotly</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="section" id="section-41770f4a">
+        <section class="section-container">
+            <h2 class="heading">Certifications</h2>
+            <div class="description svelte-1n9fm19"><!-- HTML_TAG_START -->
+                <p>Active licenses:</p><!-- HTML_TAG_END -->
+            </div>
+            <ul class="svelte-1n9fm19">
+                <li class="svelte-1n9fm19">
+                    <span>NCEES </span>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="section" id="section-eff60d9d">
+        <footer>
+            <div class="section-container svelte-i8f0ga">
+                <div class="primary svelte-i8f0ga">
+                    <h2 class="heading">Get in touch</h2>
+                    <a class="email svelte-i8f0ga" href="mailto:Denver@DenverNoell.com">
+                        <span class="svelte-i8f0ga">Denver@DenverNoell.com</span></a>
+                </div>
+                <hr>
+                <div class="secondary svelte-i8f0ga"><span class="copyright svelte-i8f0ga">Copyright 2023</span>
+                    <span class="primo svelte-i8f0ga"><a href="https://primo.so" class="svelte-i8f0ga">Primo</a> Powered </span>
+                    <ul class="svelte-i8f0ga">
+                        <li><a href="https://twitter.com" aria-label="mdi:twitter" class="svelte-i8f0ga"></a>
+                        </li>
+                        <li><a href="https://github.com" aria-label="mdi:github" class="svelte-i8f0ga"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden role="img" width="1em" height="1em" viewBox="0 0 24 24" class="iconify iconify--mdi"><!-- HTML_TAG_START -->
+                                    <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" /><!-- HTML_TAG_END -->
+                                </svg></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module">
+        const path = window.location.pathname === '/' ? '' : window.location.pathname
+        const [{
+            default: App
+        }] = await Promise.all([
+            import(path + '/_module.js')
+        ]).catch(e => console.error(e))
+        new App({
+            target: document.querySelector('body'),
+            hydrate: true,
+        })
+    </script>
+</body>
+
+</html>
