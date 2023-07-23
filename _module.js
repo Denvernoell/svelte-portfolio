@@ -2732,7 +2732,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (118:8) {#each social_links as { link, icon }}
+// (140:8) {#each social_links as { link, icon }}
 function create_each_block(ctx) {
 	let li;
 	let a;
@@ -2760,7 +2760,7 @@ function create_each_block(ctx) {
 		l(nodes) {
 			li = claim_element(nodes, "LI", { class: true });
 			var li_nodes = children(li);
-			a = claim_element(li_nodes, "A", { href: true, class: true });
+			a = claim_element(li_nodes, "A", { class: true, href: true });
 			var a_nodes = children(a);
 			claim_component(icon.$$.fragment, a_nodes);
 			t0 = claim_space(a_nodes);
@@ -2774,10 +2774,10 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-1byd7us");
+			attr(span, "class", "svelte-f87l6z");
+			attr(a, "class", "email svelte-f87l6z");
 			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
-			attr(a, "class", "svelte-1byd7us");
-			attr(li, "class", "svelte-1byd7us");
+			attr(li, "class", "svelte-f87l6z");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -2816,22 +2816,25 @@ function create_each_block(ctx) {
 }
 
 function create_fragment$2(ctx) {
-	let div3;
+	let div5;
 	let header;
-	let div2;
+	let div4;
 	let figure;
 	let img;
 	let img_src_value;
 	let img_alt_value;
 	let t0;
-	let div1;
+	let div3;
 	let h1;
 	let t1;
 	let t2;
 	let div0;
 	let raw_value = /*description*/ ctx[0].html + "";
 	let t3;
+	let div2;
 	let ul;
+	let t4;
+	let div1;
 	let current;
 	let each_value = /*social_links*/ ctx[3];
 	let each_blocks = [];
@@ -2846,50 +2849,55 @@ function create_fragment$2(ctx) {
 
 	return {
 		c() {
-			div3 = element("div");
+			div5 = element("div");
 			header = element("header");
-			div2 = element("div");
+			div4 = element("div");
 			figure = element("figure");
 			img = element("img");
 			t0 = space();
-			div1 = element("div");
+			div3 = element("div");
 			h1 = element("h1");
 			t1 = text(/*name*/ ctx[2]);
 			t2 = space();
 			div0 = element("div");
 			t3 = space();
+			div2 = element("div");
 			ul = element("ul");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
+			t4 = space();
+			div1 = element("div");
 			this.h();
 		},
 		l(nodes) {
-			div3 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div3_nodes = children(div3);
-			header = claim_element(div3_nodes, "HEADER", {});
+			div5 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div5_nodes = children(div5);
+			header = claim_element(div5_nodes, "HEADER", {});
 			var header_nodes = children(header);
-			div2 = claim_element(header_nodes, "DIV", { class: true });
-			var div2_nodes = children(div2);
-			figure = claim_element(div2_nodes, "FIGURE", { class: true });
+			div4 = claim_element(header_nodes, "DIV", { class: true });
+			var div4_nodes = children(div4);
+			figure = claim_element(div4_nodes, "FIGURE", { class: true });
 			var figure_nodes = children(figure);
 			img = claim_element(figure_nodes, "IMG", { src: true, alt: true, class: true });
 			figure_nodes.forEach(detach);
-			t0 = claim_space(div2_nodes);
-			div1 = claim_element(div2_nodes, "DIV", { class: true });
-			var div1_nodes = children(div1);
-			h1 = claim_element(div1_nodes, "H1", { class: true });
+			t0 = claim_space(div4_nodes);
+			div3 = claim_element(div4_nodes, "DIV", { class: true });
+			var div3_nodes = children(div3);
+			h1 = claim_element(div3_nodes, "H1", { class: true });
 			var h1_nodes = children(h1);
 			t1 = claim_text(h1_nodes, /*name*/ ctx[2]);
 			h1_nodes.forEach(detach);
-			t2 = claim_space(div1_nodes);
-			div0 = claim_element(div1_nodes, "DIV", { class: true });
+			t2 = claim_space(div3_nodes);
+			div0 = claim_element(div3_nodes, "DIV", { class: true });
 			var div0_nodes = children(div0);
 			div0_nodes.forEach(detach);
-			t3 = claim_space(div1_nodes);
-			ul = claim_element(div1_nodes, "UL", { class: true });
+			t3 = claim_space(div3_nodes);
+			div2 = claim_element(div3_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			ul = claim_element(div2_nodes, "UL", { class: true });
 			var ul_nodes = children(ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -2897,41 +2905,47 @@ function create_fragment$2(ctx) {
 			}
 
 			ul_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
+			t4 = claim_space(div2_nodes);
+			div1 = claim_element(div2_nodes, "DIV", {});
+			children(div1).forEach(detach);
 			div2_nodes.forEach(detach);
-			header_nodes.forEach(detach);
 			div3_nodes.forEach(detach);
+			div4_nodes.forEach(detach);
+			header_nodes.forEach(detach);
+			div5_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*portrait*/ ctx[1].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*portrait*/ ctx[1].image.alt);
-			attr(img, "class", "svelte-1byd7us");
-			attr(figure, "class", "svelte-1byd7us");
+			attr(img, "class", "svelte-f87l6z");
+			attr(figure, "class", "svelte-f87l6z");
 			toggle_class(figure, "square", /*portrait*/ ctx[1].variation === "square");
-			attr(h1, "class", "headline svelte-1byd7us");
-			attr(div0, "class", "description svelte-1byd7us");
-			attr(ul, "class", "social svelte-1byd7us");
-			attr(div1, "class", "svelte-1byd7us");
-			attr(div2, "class", "section-container svelte-1byd7us");
-			attr(div3, "class", "section");
-			attr(div3, "id", "section-ba1dcbef");
+			attr(h1, "class", "headline svelte-f87l6z");
+			attr(div0, "class", "description svelte-f87l6z");
+			attr(ul, "class", "social svelte-f87l6z");
+			attr(div2, "class", "primary svelte-f87l6z");
+			attr(div3, "class", "svelte-f87l6z");
+			attr(div4, "class", "section-container svelte-f87l6z");
+			attr(div5, "class", "section");
+			attr(div5, "id", "section-ba1dcbef");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div3, anchor);
-			append_hydration(div3, header);
-			append_hydration(header, div2);
-			append_hydration(div2, figure);
+			insert_hydration(target, div5, anchor);
+			append_hydration(div5, header);
+			append_hydration(header, div4);
+			append_hydration(div4, figure);
 			append_hydration(figure, img);
-			append_hydration(div2, t0);
-			append_hydration(div2, div1);
-			append_hydration(div1, h1);
+			append_hydration(div4, t0);
+			append_hydration(div4, div3);
+			append_hydration(div3, h1);
 			append_hydration(h1, t1);
-			append_hydration(div1, t2);
-			append_hydration(div1, div0);
+			append_hydration(div3, t2);
+			append_hydration(div3, div0);
 			div0.innerHTML = raw_value;
-			append_hydration(div1, t3);
-			append_hydration(div1, ul);
+			append_hydration(div3, t3);
+			append_hydration(div3, div2);
+			append_hydration(div2, ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
@@ -2939,6 +2953,8 @@ function create_fragment$2(ctx) {
 				}
 			}
 
+			append_hydration(div2, t4);
+			append_hydration(div2, div1);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -3002,7 +3018,7 @@ function create_fragment$2(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div3);
+			if (detaching) detach(div5);
 			destroy_each(each_blocks, detaching);
 		}
 	};
@@ -3052,17 +3068,20 @@ function get_each_context$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[6] = list[i].label;
 	child_ctx[7] = list[i].icon;
+	child_ctx[8] = list[i].link;
 	return child_ctx;
 }
 
-// (44:4) {#each items as {label,icon}}
+// (84:4) {#each items as {label,icon,link}}
 function create_each_block$1(ctx) {
 	let li;
+	let a;
 	let icon;
 	let t0;
 	let span;
 	let t1_value = /*label*/ ctx[6] + "";
 	let t1;
+	let a_href_value;
 	let t2;
 	let current;
 	icon = new Component$1({ props: { icon: /*icon*/ ctx[7] } });
@@ -3070,6 +3089,7 @@ function create_each_block$1(ctx) {
 	return {
 		c() {
 			li = element("li");
+			a = element("a");
 			create_component(icon.$$.fragment);
 			t0 = space();
 			span = element("span");
@@ -3080,24 +3100,31 @@ function create_each_block$1(ctx) {
 		l(nodes) {
 			li = claim_element(nodes, "LI", { class: true });
 			var li_nodes = children(li);
-			claim_component(icon.$$.fragment, li_nodes);
-			t0 = claim_space(li_nodes);
-			span = claim_element(li_nodes, "SPAN", {});
+			a = claim_element(li_nodes, "A", { class: true, href: true });
+			var a_nodes = children(a);
+			claim_component(icon.$$.fragment, a_nodes);
+			t0 = claim_space(a_nodes);
+			span = claim_element(a_nodes, "SPAN", { class: true });
 			var span_nodes = children(span);
 			t1 = claim_text(span_nodes, t1_value);
 			span_nodes.forEach(detach);
+			a_nodes.forEach(detach);
 			t2 = claim_space(li_nodes);
 			li_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(li, "class", "svelte-1n9fm19");
+			attr(span, "class", "svelte-16b7n60");
+			attr(a, "class", "email svelte-16b7n60");
+			attr(a, "href", a_href_value = /*link*/ ctx[8]);
+			attr(li, "class", "svelte-16b7n60");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
-			mount_component(icon, li, null);
-			append_hydration(li, t0);
-			append_hydration(li, span);
+			append_hydration(li, a);
+			mount_component(icon, a, null);
+			append_hydration(a, t0);
+			append_hydration(a, span);
 			append_hydration(span, t1);
 			append_hydration(li, t2);
 			current = true;
@@ -3107,6 +3134,10 @@ function create_each_block$1(ctx) {
 			if (dirty & /*items*/ 4) icon_changes.icon = /*icon*/ ctx[7];
 			icon.$set(icon_changes);
 			if ((!current || dirty & /*items*/ 4) && t1_value !== (t1_value = /*label*/ ctx[6] + "")) set_data(t1, t1_value);
+
+			if (!current || dirty & /*items*/ 4 && a_href_value !== (a_href_value = /*link*/ ctx[8])) {
+				attr(a, "href", a_href_value);
+			}
 		},
 		i(local) {
 			if (current) return;
@@ -3125,7 +3156,7 @@ function create_each_block$1(ctx) {
 }
 
 function create_fragment$3(ctx) {
-	let div1;
+	let div3;
 	let section;
 	let h2;
 	let t0;
@@ -3133,7 +3164,10 @@ function create_fragment$3(ctx) {
 	let div0;
 	let raw_value = /*description*/ ctx[0].html + "";
 	let t2;
+	let div2;
 	let ul;
+	let t3;
+	let div1;
 	let current;
 	let each_value = /*items*/ ctx[2];
 	let each_blocks = [];
@@ -3148,25 +3182,28 @@ function create_fragment$3(ctx) {
 
 	return {
 		c() {
-			div1 = element("div");
+			div3 = element("div");
 			section = element("section");
 			h2 = element("h2");
 			t0 = text(/*heading*/ ctx[1]);
 			t1 = space();
 			div0 = element("div");
 			t2 = space();
+			div2 = element("div");
 			ul = element("ul");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
+			t3 = space();
+			div1 = element("div");
 			this.h();
 		},
 		l(nodes) {
-			div1 = claim_element(nodes, "DIV", { class: true, id: true });
-			var div1_nodes = children(div1);
-			section = claim_element(div1_nodes, "SECTION", { class: true });
+			div3 = claim_element(nodes, "DIV", { class: true, id: true });
+			var div3_nodes = children(div3);
+			section = claim_element(div3_nodes, "SECTION", { class: true });
 			var section_nodes = children(section);
 			h2 = claim_element(section_nodes, "H2", { class: true });
 			var h2_nodes = children(h2);
@@ -3177,7 +3214,9 @@ function create_fragment$3(ctx) {
 			var div0_nodes = children(div0);
 			div0_nodes.forEach(detach);
 			t2 = claim_space(section_nodes);
-			ul = claim_element(section_nodes, "UL", { class: true });
+			div2 = claim_element(section_nodes, "DIV", { class: true });
+			var div2_nodes = children(div2);
+			ul = claim_element(div2_nodes, "UL", { class: true });
 			var ul_nodes = children(ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -3185,28 +3224,34 @@ function create_fragment$3(ctx) {
 			}
 
 			ul_nodes.forEach(detach);
+			t3 = claim_space(div2_nodes);
+			div1 = claim_element(div2_nodes, "DIV", {});
+			children(div1).forEach(detach);
+			div2_nodes.forEach(detach);
 			section_nodes.forEach(detach);
-			div1_nodes.forEach(detach);
+			div3_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
 			attr(h2, "class", "heading");
-			attr(div0, "class", "description svelte-1n9fm19");
-			attr(ul, "class", "svelte-1n9fm19");
+			attr(div0, "class", "description svelte-16b7n60");
+			attr(ul, "class", "svelte-16b7n60");
+			attr(div2, "class", "primary svelte-16b7n60");
 			attr(section, "class", "section-container");
-			attr(div1, "class", "section");
-			attr(div1, "id", "section-310d737c");
+			attr(div3, "class", "section");
+			attr(div3, "id", "section-310d737c");
 		},
 		m(target, anchor) {
-			insert_hydration(target, div1, anchor);
-			append_hydration(div1, section);
+			insert_hydration(target, div3, anchor);
+			append_hydration(div3, section);
 			append_hydration(section, h2);
 			append_hydration(h2, t0);
 			append_hydration(section, t1);
 			append_hydration(section, div0);
 			div0.innerHTML = raw_value;
 			append_hydration(section, t2);
-			append_hydration(section, ul);
+			append_hydration(section, div2);
+			append_hydration(div2, ul);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
@@ -3214,6 +3259,8 @@ function create_fragment$3(ctx) {
 				}
 			}
 
+			append_hydration(div2, t3);
+			append_hydration(div2, div1);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -3265,7 +3312,7 @@ function create_fragment$3(ctx) {
 			current = false;
 		},
 		d(detaching) {
-			if (detaching) detach(div1);
+			if (detaching) detach(div3);
 			destroy_each(each_blocks, detaching);
 		}
 	};
@@ -4064,67 +4111,85 @@ function create_fragment$6(ctx) {
 				],
 				title: "Denver Noell Portfolio",
 				description: {
-					"html": "<p>Some technologies i’ve been using lately:</p>",
-					"markdown": "Some technologies i’ve been using lately:\n\n"
+					"html": "<p>Some tools and technologies i’ve been using lately:</p>",
+					"markdown": "Some tools and technologies i’ve been using lately:\n\n"
 				},
 				heading: "Skills",
 				items: [
 					{
 						"icon": "logos:python",
+						"link": "https://www.python.org/",
 						"label": "Python"
 					},
 					{
-						"icon": "logos:supabase-icon",
-						"label": "Supabase"
-					},
-					{
 						"icon": "logos:streamlit",
+						"link": "https://streamlit.io/",
 						"label": "Streamlit"
 					},
 					{
-						"icon": "devicon:matplotlib",
-						"label": "Matplotlib"
+						"icon": "logos:supabase-icon",
+						"link": "https://supabase.com/",
+						"label": "Supabase"
+					},
+					{
+						"icon": "logos:postgresql",
+						"link": "https://www.postgresql.org/",
+						"label": "PostgreSQL"
 					},
 					{
 						"icon": "logos:pandas-icon",
+						"link": "https://pandas.pydata.org/",
 						"label": "Pandas"
 					},
 					{
 						"icon": "simple-icons:polars",
+						"link": "https://www.pola.rs/",
 						"label": "Polars"
 					},
 					{
-						"icon": "logos:leaflet",
-						"label": "Leaflet"
-					},
-					{
-						"icon": "devicon:vscode",
-						"label": "VS Code"
-					},
-					{
-						"icon": "devicon:poetry",
-						"label": "Poetry"
-					},
-					{
-						"icon": "icon-park:hexagon-one",
-						"label": "Shiny"
+						"icon": "devicon:matplotlib",
+						"link": "https://matplotlib.org/",
+						"label": "Matplotlib"
 					},
 					{
 						"icon": "devicon:plotly",
+						"link": "https://plotly.com/",
 						"label": "Plotly"
 					},
 					{
+						"icon": "logos:leaflet",
+						"link": "https://leafletjs.com/",
+						"label": "Leaflet"
+					},
+					{
+						"icon": "icon-park:hexagon-one",
+						"link": "https://shiny.rstudio.com/py/",
+						"label": "Shiny"
+					},
+					{
+						"icon": "devicon:poetry",
+						"link": "https://python-poetry.org/",
+						"label": "Poetry"
+					},
+					{
+						"icon": "devicon:vscode",
+						"link": "https://code.visualstudio.com/",
+						"label": "VS Code"
+					},
+					{
 						"icon": "logos:notion-icon",
+						"link": "https://www.notion.so/",
 						"label": "Notion"
 					},
-					{ "icon": "devicon:git", "label": "Git" },
 					{
-						"icon": "logos:docker-icon",
-						"label": "Docker"
+						"icon": "devicon:git",
+						"link": "https://git-scm.com/",
+						"label": "Git"
 					},
 					{
-						"icon": "logos:postgresql",
-						"label": "PostgreSQL"
+						"icon": "logos:docker-icon",
+						"link": "https://www.docker.com/",
+						"label": "Docker"
 					}
 				]
 			}
@@ -4211,24 +4276,7 @@ function create_fragment$6(ctx) {
 				description: "Denver's Portfolio",
 				heading: "Get in touch",
 				email: "Denver@DenverNoell.com",
-				social_links: [
-					{
-						"icon": "mdi:twitter",
-						"link": {
-							"url": "https://twitter.com",
-							"label": "Twitter",
-							"active": false
-						}
-					},
-					{
-						"icon": "mdi:github",
-						"link": {
-							"url": "https://github.com",
-							"label": "Github",
-							"active": false
-						}
-					}
-				]
+				social_links: []
 			}
 		});
 
