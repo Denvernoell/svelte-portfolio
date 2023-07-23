@@ -2732,7 +2732,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (140:8) {#each social_links as { link, icon }}
+// (151:8) {#each social_links as { link, icon }}
 function create_each_block(ctx) {
 	let li;
 	let a;
@@ -2774,10 +2774,10 @@ function create_each_block(ctx) {
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-f87l6z");
-			attr(a, "class", "email svelte-f87l6z");
+			attr(span, "class", "svelte-1mj8wxr");
+			attr(a, "class", "email svelte-1mj8wxr");
 			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
-			attr(li, "class", "svelte-f87l6z");
+			attr(li, "class", "svelte-1mj8wxr");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
@@ -2918,15 +2918,15 @@ function create_fragment$2(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*portrait*/ ctx[1].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*portrait*/ ctx[1].image.alt);
-			attr(img, "class", "svelte-f87l6z");
-			attr(figure, "class", "svelte-f87l6z");
+			attr(img, "class", "svelte-1mj8wxr");
+			attr(figure, "class", "svelte-1mj8wxr");
 			toggle_class(figure, "square", /*portrait*/ ctx[1].variation === "square");
-			attr(h1, "class", "headline svelte-f87l6z");
-			attr(div0, "class", "description svelte-f87l6z");
-			attr(ul, "class", "social svelte-f87l6z");
-			attr(div2, "class", "primary svelte-f87l6z");
-			attr(div3, "class", "svelte-f87l6z");
-			attr(div4, "class", "section-container svelte-f87l6z");
+			attr(h1, "class", "headline svelte-1mj8wxr");
+			attr(div0, "class", "description svelte-1mj8wxr");
+			attr(ul, "class", "social svelte-1mj8wxr");
+			attr(div2, "class", "primary svelte-1mj8wxr");
+			attr(div3, "class", "svelte-1mj8wxr");
+			attr(div4, "class", "section-container svelte-1mj8wxr");
 			attr(div5, "class", "section");
 			attr(div5, "id", "section-ba1dcbef");
 		},
@@ -4011,8 +4011,8 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
-				description: "Denver's Portfolio"
+				title: "Denver Noell",
+				description: "Landing page"
 			}
 		});
 
@@ -4036,7 +4036,7 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
+				title: "Denver Noell",
 				description: {
 					"html": "<p>Civil Engineering EIT that loves building cool things with Python.</p>",
 					"markdown": "Civil Engineering EIT that loves building cool things with Python.\n\n"
@@ -4109,7 +4109,7 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
+				title: "Denver Noell",
 				description: {
 					"html": "<p>Some tools and technologies i’ve been using lately:</p>",
 					"markdown": "Some tools and technologies i’ve been using lately:\n\n"
@@ -4215,8 +4215,8 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
-				description: "Denver's Portfolio",
+				title: "Denver Noell",
+				description: "Landing page",
 				heading: "Project Highlights",
 				items: [
 					{
@@ -4272,8 +4272,8 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
-				description: "Denver's Portfolio",
+				title: "Denver Noell",
+				description: "Landing page",
 				heading: "Get in touch",
 				email: "Denver@DenverNoell.com",
 				social_links: []
@@ -4300,8 +4300,8 @@ function create_fragment$6(ctx) {
 						"link": { "url": "/projects", "label": "Projects" }
 					}
 				],
-				title: "Denver Noell Portfolio",
-				description: "Denver's Portfolio"
+				title: "Denver Noell",
+				description: "Landing page"
 			}
 		});
 
