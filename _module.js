@@ -2732,35 +2732,43 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (154:8) {#each social_links as { link, icon }}
+// (322:8) {#each social_links as { link, icon }}
 function create_each_block(ctx) {
 	let li;
+	let div1;
 	let a;
 	let icon;
 	let t0;
 	let span;
 	let t1_value = /*link*/ ctx[7].label + "";
 	let t1;
-	let a_href_value;
 	let t2;
+	let div0;
+	let a_href_value;
+	let t3;
 	let current;
 	icon = new Component$1({ props: { icon: /*icon*/ ctx[8] } });
 
 	return {
 		c() {
 			li = element("li");
+			div1 = element("div");
 			a = element("a");
 			create_component(icon.$$.fragment);
 			t0 = space();
 			span = element("span");
 			t1 = text(t1_value);
 			t2 = space();
+			div0 = element("div");
+			t3 = space();
 			this.h();
 		},
 		l(nodes) {
 			li = claim_element(nodes, "LI", { class: true });
 			var li_nodes = children(li);
-			a = claim_element(li_nodes, "A", { class: true, href: true });
+			div1 = claim_element(li_nodes, "DIV", { class: true });
+			var div1_nodes = children(div1);
+			a = claim_element(div1_nodes, "A", { class: true, href: true });
 			var a_nodes = children(a);
 			claim_component(icon.$$.fragment, a_nodes);
 			t0 = claim_space(a_nodes);
@@ -2768,25 +2776,33 @@ function create_each_block(ctx) {
 			var span_nodes = children(span);
 			t1 = claim_text(span_nodes, t1_value);
 			span_nodes.forEach(detach);
+			t2 = claim_space(a_nodes);
+			div0 = claim_element(a_nodes, "DIV", {});
+			children(div0).forEach(detach);
 			a_nodes.forEach(detach);
-			t2 = claim_space(li_nodes);
+			t3 = claim_space(div1_nodes);
+			div1_nodes.forEach(detach);
 			li_nodes.forEach(detach);
 			this.h();
 		},
 		h() {
-			attr(span, "class", "svelte-2gcz6x");
-			attr(a, "class", "email svelte-2gcz6x");
+			attr(span, "class", "svelte-3gb6o2");
+			attr(a, "class", "email svelte-3gb6o2");
 			attr(a, "href", a_href_value = /*link*/ ctx[7].url);
-			attr(li, "class", "svelte-2gcz6x");
+			attr(div1, "class", "icon svelte-3gb6o2");
+			attr(li, "class", "svelte-3gb6o2");
 		},
 		m(target, anchor) {
 			insert_hydration(target, li, anchor);
-			append_hydration(li, a);
+			append_hydration(li, div1);
+			append_hydration(div1, a);
 			mount_component(icon, a, null);
 			append_hydration(a, t0);
 			append_hydration(a, span);
 			append_hydration(span, t1);
-			append_hydration(li, t2);
+			append_hydration(a, t2);
+			append_hydration(a, div0);
+			append_hydration(div1, t3);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -2918,15 +2934,15 @@ function create_fragment$2(ctx) {
 		h() {
 			if (!src_url_equal(img.src, img_src_value = /*portrait*/ ctx[1].image.url)) attr(img, "src", img_src_value);
 			attr(img, "alt", img_alt_value = /*portrait*/ ctx[1].image.alt);
-			attr(img, "class", "svelte-2gcz6x");
-			attr(figure, "class", "svelte-2gcz6x");
+			attr(img, "class", "svelte-3gb6o2");
+			attr(figure, "class", "svelte-3gb6o2");
 			toggle_class(figure, "square", /*portrait*/ ctx[1].variation === "square");
-			attr(h1, "class", "headline svelte-2gcz6x");
-			attr(div0, "class", "description svelte-2gcz6x");
-			attr(ul, "class", "social svelte-2gcz6x");
-			attr(div2, "class", "primary svelte-2gcz6x");
-			attr(div3, "class", "svelte-2gcz6x");
-			attr(div4, "class", "section-container svelte-2gcz6x");
+			attr(h1, "class", "headline svelte-3gb6o2");
+			attr(div0, "class", "description svelte-3gb6o2");
+			attr(ul, "class", "social svelte-3gb6o2");
+			attr(div2, "class", "primary svelte-3gb6o2");
+			attr(div3, "class", "svelte-3gb6o2");
+			attr(div4, "class", "section-container svelte-3gb6o2");
 			attr(div5, "class", "section");
 			attr(div5, "id", "section-ba1dcbef");
 		},
