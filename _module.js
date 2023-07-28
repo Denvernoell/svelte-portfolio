@@ -757,6 +757,9 @@ function create_fragment(ctx) {
 	let link0;
 	let link0_href_value;
 	let link1;
+	let head;
+	let script;
+	let script_src_value;
 	let title_value;
 	let meta2;
 	let style;
@@ -769,13 +772,15 @@ function create_fragment(ctx) {
 			meta1 = element("meta");
 			link0 = element("link");
 			link1 = element("link");
+			head = element("head");
+			script = element("script");
 			meta2 = element("meta");
 			style = element("style");
 			t = text("/* Reset & standardize default styles */\n@import url(\"https://unpkg.com/@primo-app/primo@1.3.64/reset.css\") layer;\n\n/* Design tokens (apply to components) */\n:root {\n  /* Custom theme options */\n  --color-accent: #5a5a5a;\n  --font-primary: \"Bespoke Serif\", serif;\n  --font-secondary: \"Open Sans\", sans-serif;\n\n  /* Base values */\n  --box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  --border-radius: 8px;\n  --border-color: #cbcace;\n}\n\n/* Root element (use instead of `body`) */\n#page {\n  font-family: var(--font-secondary), system-ui, sans-serif;\n  color: #222;\n  line-height: 1.5;\n  font-size: 1.125rem;\n  background: white;\n}\n\n/* Elements */\n.section-container {\n  max-width: 900px;\n  margin: 0 auto;\n  padding: 4rem 2rem;\n}\n\na.link {\n  line-height: 1.25;\n  font-weight: 400;\n  border-bottom: 2px solid var(--color-accent, rebeccapurple);\n  transform: translateY(-2px); /* move link back into place */\n  transition: var(--transition, 0.1s border);\n}\n\na.link:hover {\n    border-color: transparent;\n  }\n\n.heading {\n  font-family: var(--font-primary);\n  font-size: 2rem;\n  line-height: 1.15;\n  font-weight: 500;\n  margin-bottom: 1.25rem;\n}\n\n.button {\n  color: white;\n  background: var(--color-accent, rebeccapurple);\n  border-radius: 5px;\n  padding: 8px 20px;\n  transition: var(--transition, 0.1s box-shadow);\n  border: 0;\n}\n\n/* reset */\n\n.button:hover {\n    box-shadow: 0 0 0 2px var(--color-accent, rebeccapurple);\n  }\n\n.button.inverted {\n    background: transparent;\n    color: var(--color-accent, rebeccapurple);\n  }\n\n/* Content Section */\n.section .content {\n  max-width: 900px;\n  margin: 0 auto;\n  padding: 4rem 2rem;\n}\n.section .content p {\n    padding: 0.25rem 0;\n  }\n.section .content img {\n    width: 100%;\n    margin: 2rem 0;\n    box-shadow: var(--box-shadow);\n    border-radius: var(--border-radius);\n  }\n.section .content a.link {\n  }\n.section .content h1 {\n    font-family: var(--font-primary);\n    font-size: 3rem;\n    font-weight: 500;\n    margin-bottom: 1rem;\n  }\n.section .content h2 {\n    font-family: var(--font-primary);\n    font-size: 2rem;\n    font-weight: 500;\n    margin-bottom: 1rem;\n  }\n.section .content h3 {\n    font-family: var(--font-primary);\n    font-size: 1.5rem;\n    font-weight: 500;\n    margin-bottom: 0.5rem;\n  }\n.section .content ul {\n    list-style: disc;\n    padding: 0.5rem 0;\n    padding-left: 1.25rem;\n  }\n.section .content ol {\n    list-style: decimal;\n    padding: 0.5rem 0;\n    padding-left: 1.25rem;\n  }\n.section .content blockquote {\n    padding: 2rem;\n    box-shadow: var(--box-shadow);\n    border-radius: var(--border-radius);\n  }\nsection.has-content {\n  background: var(--background);\n}");
 			this.h();
 		},
 		l(nodes) {
-			const head_nodes = head_selector('svelte-xwprd8', document.head);
+			const head_nodes = head_selector('svelte-18quxc4', document.head);
 			meta0 = claim_element(head_nodes, "META", { name: true, content: true });
 			meta1 = claim_element(head_nodes, "META", { charset: true });
 
@@ -787,6 +792,12 @@ function create_fragment(ctx) {
 			});
 
 			link1 = claim_element(head_nodes, "LINK", { href: true, rel: true });
+			head = claim_element(head_nodes, "HEAD", {});
+			var head_nodes_1 = children(head);
+			script = claim_element(head_nodes_1, "SCRIPT", { src: true, "data-website-id": true });
+			var script_nodes = children(script);
+			script_nodes.forEach(detach);
+			head_nodes_1.forEach(detach);
 			meta2 = claim_element(head_nodes, "META", { name: true, content: true });
 			style = claim_element(head_nodes, "STYLE", {});
 			var style_nodes = children(style);
@@ -805,6 +816,9 @@ function create_fragment(ctx) {
 			attr(link0, "href", link0_href_value = /*favicon*/ ctx[0].url);
 			attr(link1, "href", "https://api.fontshare.com/v2/css?f[]=bespoke-serif@400,700,401,300,500,501,701,301&display=swap");
 			attr(link1, "rel", "stylesheet");
+			script.async = true;
+			if (!src_url_equal(script.src, script_src_value = "https://analytics.umami.is/script.js")) attr(script, "src", script_src_value);
+			attr(script, "data-website-id", "0a0065d2-a147-49d7-bda2-2231a31c4221");
 			attr(meta2, "name", "description");
 			attr(meta2, "content", /*description*/ ctx[2]);
 		},
@@ -813,6 +827,8 @@ function create_fragment(ctx) {
 			append_hydration(document.head, meta1);
 			append_hydration(document.head, link0);
 			append_hydration(document.head, link1);
+			append_hydration(document.head, head);
+			append_hydration(head, script);
 			append_hydration(document.head, meta2);
 			append_hydration(document.head, style);
 			append_hydration(style, t);
@@ -837,6 +853,7 @@ function create_fragment(ctx) {
 			detach(meta1);
 			detach(link0);
 			detach(link1);
+			detach(head);
 			detach(meta2);
 			detach(style);
 		}
